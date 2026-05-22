@@ -1,6 +1,8 @@
 import type { Request, Response } from 'express';
 import TaskService from '../services/taskService.js';
 import { v4 as uuidv4 } from 'uuid';
+import multer from 'multer';
+
 import { 
     GetSchema, 
     GetByIdSchema, 
