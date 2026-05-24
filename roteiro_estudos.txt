@@ -1,0 +1,72 @@
+AUTENTICAÇÃO vs AUTORIZAÇÃO
+
+    AUTENTICAÇÃO - A autenticação e usada para verificar a indentidade de um usuário.
+
+        -- EMAIL
+        -- SENHA
+
+        --TOKEN
+
+    AUTORIZAÇÃO - A autorização é usada para determinar quais ações um usuário pode realizar após o mesmo, já ter sido autenticado.
+
+        VITOR -> INICIA UMA SESSÃO
+                E-mail e SENHA -> token (uma sequencia de caracteres é uma sequencia criptografada com os dados do usuário JWT)
+                Cadastrar um novo usuário administrador ....
+                Quando o token chegar junto com os dados na rota de novo usuário  a rota vai pegar os dados do usuário que está 
+                solicitando aquela ação  e identificar se o token é válido, ver se o usuário tem permissão.
+
+                ROTA PROTEGIDA
+                    TOKEN
+                    VERIFICAR SE O TOKEN É VÁLIDO 
+                    DESCRIPTOGRAFAR O TOKEN E PEGAR OS DADOS DO usuário
+                    VAI VERIFICAR SE AQUELE USUÁRIO TEM AUTORIZAÇÃO PARA FAZER AQUELA ação
+
+                    
+---------------------------------------------------------------------------------------------------------------------------------------
+
+MANEIRAS DE FAZER AUTENTICAÇÃO
+
+Autenticação com senha
+
+Autenticação com Token de acesso
+
+Autenticação com certificado digital
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+COMO AS EMPRESAS TRABALHAM COM AUTENTICAÇÃO
+
+- AWS Cognito
+- AD Azure
+- Google Authenticator
+
+- Criar o meu próprio serviço de autenticação
+
+    -- MICROSERVIÇO - Serviço com uma única responsabilidade independente de outros serviços com seu
+    próprio banco de dados e instância.
+
+    -- MONOLITO - Um único serviço que tem todas as responsabilidades. autenticação, autorização,
+    usuarios, produtos, categorias, subcategorias
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+SENHAS E SEGURANÇA
+
+MD5
+BASE64
+
+
+BCRYPT
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+JWT
+
+(JSON WEB TOKEN)
+
+O JWT E COMPOSTO POR 3 PARTES SENDO ELAS:
+
+-- CABEÇALHO
+-- PAYLOAD
+-- ASSINATURA
+
